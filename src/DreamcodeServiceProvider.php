@@ -43,6 +43,9 @@ class DreamcodeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(
+            \Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface::class,
+            \Dreamcode\Goe\App\Repositories\Store\StoreEloquentRepository::class
+        );
     }
 }

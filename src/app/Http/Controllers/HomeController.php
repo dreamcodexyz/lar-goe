@@ -1,29 +1,31 @@
 <?php
 namespace Dreamcode\Goe\App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Customer;
-use App\Teacher;
-use App\Classes;
-use App\Document;
-use App\ContentTest;
-use App\Parents;
-use App\Inventory;
-use App\Store;
+use Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface;
 
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+
+    /**
+     * @var StoreRepositoryInterface|\Dreamcode\Goe\App\Repositories\RepositoryInterface
+     */
+    protected $storeRepository;
+
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+     public function __construct(
+         StoreRepositoryInterface $storeRepository
+     )
+     {
+//         $this->middleware('auth');
+         $this->storeRepository = $storeRepository;
+     }
 
     /**
      * Show the application dashboard.
@@ -32,6 +34,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        $store = $this->storeRepository->getAll();
+
+        dd($store);
+
         $contact = config('site.contact');
         return view('goe::pages.test', compact('contact', $contact));
     }

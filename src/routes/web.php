@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/test', function () {
-    return 'content';
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers'], function(){
+	Route::get('/test', 'HomeController@index');
 });
+

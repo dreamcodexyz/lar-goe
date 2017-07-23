@@ -1,0 +1,16 @@
+{
+    "name": "dotu/lar-goe",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Do Tu",
+            "email": "tdng91@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"Dreamcode\\Goe": "src/"
+    	}
+    }
+}

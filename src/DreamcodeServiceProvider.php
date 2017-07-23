@@ -13,7 +13,13 @@ class DreamcodeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadRoutesFrom( $this->base_path('routes/web.php') );
+    }
+
+    private function base_path($path)
+    {
+        $base = __DIR__;
+        return $base.'/'.$path;
     }
 
     /**

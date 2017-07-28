@@ -19,7 +19,15 @@ class DreamcodeServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom($this->migration_path());
 
-        $this->publishes([$this->config_path('site.php') => config_path('site.php')]);
+        $this->loadTranslationsFrom($this->resource_path('lang'), 'dreamcodexyz/lar-goe');
+
+        $this->publishes([
+            $this->config_path('site.php') => config_path('site.php')
+        ]);
+
+        $this->publishes([
+            $this->public_path('assets') => public_path('vendor/dreamcodexyz/lar-goe'),
+        ], 'public');
     }
 
     private function base_path($path)
@@ -41,6 +49,11 @@ class DreamcodeServiceProvider extends ServiceProvider
     private function migration_path()
     {
         return $this->base_path('database/migrations/');
+    }
+
+    private function public_path($path)
+    {
+        return $this->base_path('public/'.$path);
     }
 
     /**

@@ -1,0 +1,7 @@
+add to config/app.php
+'providers' => [
+    /*
+     * Package Service Providers...
+     */
+    Dreamcode\Goe\DreamcodeServiceProvider::class
+]

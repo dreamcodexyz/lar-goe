@@ -2,8 +2,9 @@
 namespace Dreamcode\Goe\App\Http\Controllers;
 
 use Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface;
-
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -36,10 +37,25 @@ class HomeController extends Controller
     {
 
         $store = $this->storeRepository->getAll();
+//        dd($store->toArray());
 
-        dd($store);
+        $data['contact'] = config('site.contact');
+        $data['session_data'] = session()->all();
+        $data['session_data2'] = Session::all();
+        $data['x'] = $_SERVER;
 
-        $contact = config('site.contact');
-        return view('goe::pages.test', compact('contact', $contact));
+        return view('goe::pages.test', $data);
     }
+
+    public function store(Request $request)
+    {
+        $store_id = $request->input('store_id');
+        Session::put('store_id', $store_id);
+        session(['store_id' => $store_id]);
+        $data = session()->all();
+        return response()->json(['msg' => 'OK', 'result' => $data], 200);
+
+        //https://laravel.com/docs/5.4/responses
+    }
+
 }

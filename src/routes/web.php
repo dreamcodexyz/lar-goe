@@ -12,10 +12,9 @@
 */
 
 Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers', 'prefix' => 'test'], function(){
-	Route::get('/', 'HomeController@index');
-    Route::post('/store', 'HomeController@store');
+	Route::get('/', 'TestController@index');
+    Route::post('/store', 'TestController@store');
 });
-
 
 
 Route::get('bundle', function() {

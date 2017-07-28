@@ -26,7 +26,7 @@ class DreamcodeServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            $this->public_path('assets') => public_path('vendor/dreamcodexyz/lar-goe'),
+            $this->public_path('assets') => public_path('assets'),
         ], 'public');
     }
 

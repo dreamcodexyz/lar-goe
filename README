@@ -5,3 +5,6 @@ add to config/app.php
      */
     Dreamcode\Goe\DreamcodeServiceProvider::class
 ]
+
+
+php artisan db:seed --class="Dreamcode\Goe\Database\Seeds\DatabaseSeeder"

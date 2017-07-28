@@ -17,6 +17,8 @@ class DreamcodeServiceProvider extends ServiceProvider
         $this->loadRoutesFrom($this->base_path('routes/web.php'));
         $this->loadViewsFrom($this->resource_path('views'), 'goe');
 
+        $this->loadMigrationsFrom($this->migration_path());
+
         $this->publishes([$this->config_path('site.php') => config_path('site.php')]);
     }
 
@@ -34,6 +36,11 @@ class DreamcodeServiceProvider extends ServiceProvider
     private function config_path($path)
     {
         return $this->base_path('config/'.$path);
+    }
+
+    private function migration_path()
+    {
+        return $this->base_path('database/migrations/');
     }
 
     /**

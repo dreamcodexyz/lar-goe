@@ -36,7 +36,7 @@ class TestController extends Controller
     public function index()
     {
 
-        $store = $this->storeRepository->getAll();
+//        $store = $this->storeRepository->getAll();
 //        dd($store->toArray());
 
         $data['contact'] = config('site.contact');
@@ -50,7 +50,9 @@ class TestController extends Controller
     public function store(Request $request)
     {
         $store_id = $request->input('store_id');
-        Session::put('store_id', $store_id);
+        $request->session()->put('store_id', $store_id);
+
+//        dd($request->session()->all());
         session(['store_id' => $store_id]);
         $data = session()->all();
         return response()->json(['msg' => 'OK', 'result' => $data], 200);

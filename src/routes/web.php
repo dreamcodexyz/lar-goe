@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers', 'prefix' => 'test'], function(){
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers', 'prefix' => 'test', 'middleware' => ['web']], function(){
 	Route::get('/', 'TestController@index');
     Route::post('/store', 'TestController@store');
 });

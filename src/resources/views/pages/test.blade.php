@@ -5,13 +5,13 @@
 
 <p>{{ $contact['email'] }}</p>
 
-{{ dump($session_data) }}
-{{ dump($session_data2) }}
-{{ dump($x) }}
+{{--{{ dump($session_data) }}--}}
+{{--{{ dump($session_data2) }}--}}
+{{--{{ dump($x) }}--}}
 
 <form action="{{ url('test/store') }}" method="post">
     {{ csrf_field() }}
-    {!! csrf_token() !!}
+
     <div>
         <label for="select_store">Store</label>
         <select name="store_id" id="select_store">
@@ -36,11 +36,12 @@
         $('#submit').on('click', function (e) {
             e.preventDefault();
             var store_id = $('#select_store').val();
+            var _token = $('input[name="_token"]').val();
             console.log(store_id);
             $.ajax({
                 type: "POST",
                 url: '{{ url('test/store') }}',
-                data: {store_id: store_id},
+                data: {store_id: store_id, _token: _token},
                 success: function( data ) {
                     $("#ajaxResponse").append("<div>"+data.result.store_id+"</div>");
                 },

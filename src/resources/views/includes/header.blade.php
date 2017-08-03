@@ -39,7 +39,7 @@
             <!-- START NOTIFICATION LIST -->
             <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
 
-                @include('includes.header_box.notification')
+                @include('goe::includes.header_box.notification')
 
                 <li class="p-r-15 inline">
                     <a href="#" class="icon-set clip "></a>

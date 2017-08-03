@@ -1,10 +1,10 @@
 <?php
 namespace Dreamcode\Goe\App\Http\Controllers;
 
-use Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface;
 
 class TestController extends Controller
 {

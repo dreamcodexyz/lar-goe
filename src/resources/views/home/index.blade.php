@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('goe::layouts.default')
 @section('title', 'Go English Admin - '. $page_title)
 
 
@@ -21,7 +21,7 @@
             {{ session('status') }}
         </div>
     @endif
-    @include ('includes.notifications')
+    @include ('goe::includes.notifications')
 
     <div class="container-fluid container-fixed-lg bg-white">
         <!-- START PANEL -->
@@ -132,11 +132,6 @@
 <script>
     $(document).ready(function() {
         $('#tableWithDynamicRows').DataTable();
-
-
-
-
-
     });
 </script>
 

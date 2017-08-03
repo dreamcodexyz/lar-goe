@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
 <head>
-    @include('includes.head')
+    @include('goe::includes.head')
 </head>
 <body class="fixed-header menu-pin">
 
-@include('includes.sidebar')
+@include('goe::includes.sidebar')
 
 <!-- START PAGE-CONTAINER -->
 <div class="page-container ">
 
-    @include('includes.header')
+    @include('goe::includes.header')
 
     <!-- START PAGE CONTENT WRAPPER -->
     <div class="page-content-wrapper ">
@@ -18,7 +18,7 @@
         @yield('page-content-wrapper')
 
         <!-- START COPYRIGHT -->
-        @include('includes.copyright')
+        @include('goe::includes.copyright')
         <!-- END COPYRIGHT -->
 
     </div>
@@ -26,11 +26,11 @@
 </div>
 <!-- END PAGE CONTAINER -->
 
-@include('includes.quickview')
+@include('goe::includes.quickview')
 
-@include('includes.overlay')
+@include('goe::includes.overlay')
 
-@include('includes.footer')
+@include('goe::includes.footer')
 
 </body>
 </html>

@@ -1,17 +1,17 @@
 <!doctype html>
 <html>
 <head>
-    @include('includes.bundle.head')
+    @include('goe::includes.bundle.head')
 </head>
 <body class="fixed-header dashboard">
 
-@include('includes.bundle.sidebar')
+@include('goe::includes.bundle.sidebar')
 
 <!-- START PAGE-CONTAINER -->
 <div class="page-container ">
 
     {{-- @include('includes.header') --}}
-    @include('includes.bundle.header')
+    @include('goe::includes.bundle.header')
 
     <!-- START PAGE CONTENT WRAPPER -->
     <div class="page-content-wrapper ">
@@ -19,7 +19,7 @@
         @yield('page-content-wrapper')
 
         <!-- START COPYRIGHT -->
-        @include('includes.bundle.copyright')
+        @include('goe::includes.bundle.copyright')
         <!-- END COPYRIGHT -->
 
     </div>
@@ -27,10 +27,10 @@
 </div>
 <!-- END PAGE CONTAINER -->
 
-@include('includes.bundle.quickview')
+@include('goe::includes.bundle.quickview')
 
-@include('includes.bundle.overlay')
+@include('goe::includes.bundle.overlay')
 
-@include('includes.bundle.footer')
+@include('goe::includes.bundle.footer')
 </body>
 </html>

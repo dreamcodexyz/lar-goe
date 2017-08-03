@@ -1,20 +1,20 @@
 <!doctype html>
 <html>
 <head>
-    @include('includes.head')
+    @include('goe::includes.head')
 </head>
 <body>
 <div class="container">
 
     <header class="row">
-        @include('includes.header')
+        @include('goe::includes.header')
     </header>
 
     <div id="main" class="row">
 
         <!-- sidebar content -->
         <div id="sidebar" class="col-md-4">
-            @include('includes.sidebar')
+            @include('goe::includes.sidebar')
         </div>
 
         <!-- main content -->
@@ -25,7 +25,7 @@
     </div>
 
     <footer class="row">
-        @include('includes.footer')
+        @include('goe::includes.footer')
     </footer>
 
 </div>

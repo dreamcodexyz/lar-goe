@@ -30,8 +30,8 @@ Route::get('/settings/general', 'Settings\General@execute');
 Route::get('/settings/advanced', 'Settings\Advanced@execute');
 
 
-Auth::routes();
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\HomeController@index')->middleware('web');
+
 
 
 Route::get('customer', 'CustomersController@indexAction');

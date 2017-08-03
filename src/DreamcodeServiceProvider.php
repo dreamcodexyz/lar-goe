@@ -27,6 +27,7 @@ class DreamcodeServiceProvider extends ServiceProvider
 
         $this->publishes([
             $this->public_path('assets') => public_path('assets'),
+            $this->public_path('pages') => public_path('pages'),
         ], 'public');
     }
 

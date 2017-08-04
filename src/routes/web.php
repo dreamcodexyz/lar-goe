@@ -17,6 +17,25 @@ Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers', 'prefix' =
 });
 
 
+
+
+// Authentication Routes...
+Route::get('login', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login')->middleware('web');
+Route::post('login', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@login')->middleware('web');
+Route::post('logout', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('web');
+
+// Registration Routes...
+Route::get('register', 'Dreamcode\Goe\App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register')->middleware('web');
+Route::post('register', 'Dreamcode\Goe\App\Http\Controllers\Auth\RegisterController@register')->middleware('web');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Dreamcode\Goe\App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request')->middleware('web');
+Route::post('password/email', 'Dreamcode\Goe\App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email')->middleware('web');
+Route::get('password/reset/{token}', 'Dreamcode\Goe\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset')->middleware('web');
+Route::post('password/reset', 'Dreamcode\Goe\App\Http\Controllers\Auth\ResetPasswordController@reset')->middleware('web');
+
+
+
 Route::get('bundle', function() {
     return view('pages.bundle');
 })->middleware('auth');

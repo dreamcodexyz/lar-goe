@@ -1,39 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Dreamcode\Goe\App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
 
-class ResetPasswordController extends Controller
+class ResetPasswordController extends \App\Http\Controllers\Auth\ResetPasswordController
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Password Reset Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
-    |
-    */
-
-    use ResetsPasswords;
-
     /**
-     * Where to redirect users after resetting their password.
+     * Display the password reset view for the given token.
      *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
-     * Create a new controller instance.
+     * If no token is present, display the link request form.
      *
-     * @return void
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string|null  $token
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function __construct()
+    public function showResetForm(Request $request, $token = null)
     {
-        $this->middleware('guest');
+        return view('goe::auth.passwords.reset')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
     }
 }

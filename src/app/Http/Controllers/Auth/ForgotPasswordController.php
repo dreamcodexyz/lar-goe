@@ -1,32 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Dreamcode\Goe\App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-
-class ForgotPasswordController extends Controller
+class ForgotPasswordController extends \App\Http\Controllers\Auth\ForgotPasswordController
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Password Reset Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling password reset emails and
-    | includes a trait which assists in sending these notifications from
-    | your application to your users. Feel free to explore this trait.
-    |
-    */
-
-    use SendsPasswordResetEmails;
-
     /**
-     * Create a new controller instance.
+     * Display the form to request a password reset link.
      *
-     * @return void
+     * @return \Illuminate\Http\Response
      */
-    public function __construct()
+    public function showLinkRequestForm()
     {
-        $this->middleware('guest');
+        return view('goe::auth.passwords.email');
     }
 }

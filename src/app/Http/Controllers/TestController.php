@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface;
+//use Dreamcode\Goe\App\Repositories\Store\StoreEloquentRepository;
 
 class TestController extends Controller
 {
@@ -36,26 +37,22 @@ class TestController extends Controller
     public function index()
     {
 
-//        $store = $this->storeRepository->getAll();
-//        dd($store->toArray());
-
-        $data['contact'] = config('site.contact');
-        $data['session_data'] = session()->all();
-        $data['session_data2'] = Session::all();
-        $data['x'] = $_SERVER;
-
-        return view('goe::pages.test', $data);
+        $stores = $this->storeRepository->getAll();
+        return view('goe::pages.test')->with('stores', $stores);
     }
 
     public function store(Request $request)
     {
-        $store_id = $request->input('store_id');
-        $request->session()->put('store_id', $store_id);
+        $data = $request->all();
+        if(isset($data)){
+            unset($data['_token']);
+            $newStore = $this->storeRepository->create($data);
+        }
 
-//        dd($request->session()->all());
-        session(['store_id' => $store_id]);
-        $data = session()->all();
-        return response()->json(['msg' => 'OK', 'result' => $data], 200);
+        $stores = $this->storeRepository->getAll();
+        $returnHTML = view('goe::pages.test2',['stores'=> $stores])->render();
+//        return response()->json( array('success' => true, 'html'=>$returnHTML) );
+        return response()->json(['msg' => 'OK', 'html' =>$returnHTML, 'store' => $newStore], 200);
 
         //https://laravel.com/docs/5.4/responses
     }

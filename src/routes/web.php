@@ -12,26 +12,6 @@
 */
 Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\Index@execute')->middleware('web');
 
-Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\Test', 'prefix' => 'test', 'middleware' => ['web']], function(){
-	Route::get('/', 'Index@execute');
-    Route::post('/store', 'Store@execute');
-});
-
-Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'prefix' => 'stores', 'middleware' => ['web']], function(){
-    Route::get('/', 'Index@execute');
-    Route::get('/new', 'Add@execute');
-    Route::get('/edit/{id}', 'Edit@execute');
-    Route::post('/save', 'Save@execute');
-    Route::get('/delete/{id}', 'Delete@execute');
-});
-
-
-
-
-
-
-
-
 // Authentication Routes...
 Route::get('login', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login')->middleware('web');
 Route::post('login', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@login')->middleware('web');
@@ -47,10 +27,33 @@ Route::post('password/email', 'Dreamcode\Goe\App\Http\Controllers\Auth\ForgotPas
 Route::get('password/reset/{token}', 'Dreamcode\Goe\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset')->middleware('web');
 Route::post('password/reset', 'Dreamcode\Goe\App\Http\Controllers\Auth\ResetPasswordController@reset')->middleware('web');
 
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\Test', 'prefix' => 'test', 'middleware' => ['web']], function(){
+    Route::get('/', 'Index@execute');
+    Route::post('/store', 'Store@execute');
+});
+
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'prefix' => 'stores', 'middleware' => ['web']], function(){
+    Route::get('/', 'Index@execute');
+    Route::get('/new', 'Add@execute');
+    Route::get('/edit/{id}', 'Edit@execute');
+    Route::post('/save', 'Save@execute');
+    Route::get('/delete/{id}', 'Delete@execute');
+});
+
+
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Customer', 'prefix' => 'customer', 'middleware' => ['web']], function(){
+    Route::get('/', 'Index@execute');
+    Route::get('/new', 'Add@execute');
+    Route::get('/edit/{id}', 'Edit@execute');
+    Route::post('/save', 'Save@execute');
+    Route::get('/delete/{id}', 'Delete@execute');
+});
+
+
 
 
 Route::get('bundle', function() {
-    return view('pages.bundle');
+    return view('goe::pages.bundle');
 })->middleware('auth');
 
 Route::get('/example', 'Example\ExampleParsleyController@indexAction');
@@ -65,11 +68,6 @@ Route::get('/settings/advanced', 'Settings\Advanced@execute');
 
 
 
-Route::get('customer', 'CustomersController@indexAction');
-Route::get('customer/new', 'CustomersController@newAction');
-Route::get('customer/edit/{id}', 'CustomersController@editAction');
-Route::post('customer/save', 'CustomersController@saveAction');
-Route::get('customer/delete/{id}', 'CustomersController@deleteAction');
 
 
 Route::get('customer/leave', 'CustomersController@leaveAction');

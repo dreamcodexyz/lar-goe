@@ -1,24 +1,24 @@
 <?php
-namespace Dreamcode\Goe\App\Http\Controllers\Stores;
+namespace Dreamcode\Goe\App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface;
+use Dreamcode\Goe\App\Repositories\Customer\CustomerRepositoryInterface;
 
 class Edit extends Controller
 {
     /**
-     * @var StoreRepositoryInterface|\Dreamcode\Goe\App\Repositories\RepositoryInterface
+     * @var CustomerRepositoryInterface|\Dreamcode\Goe\App\Repositories\RepositoryInterface
      */
-    protected $storeRepository;
+    protected $customerRepository;
 
     public function __construct(
-        StoreRepositoryInterface $storeRepository
+        CustomerRepositoryInterface $customerRepository
     )
     {
         $this->middleware('auth');
-        $this->storeRepository = $storeRepository;
+        $this->customerRepository = $customerRepository;
     }
 
     public function execute($id = null)
@@ -26,9 +26,9 @@ class Edit extends Controller
         $data = ['page_title' => __("goe::stores.info_title")];
 
         if($id){
-            $data['form_data'] = $this->storeRepository->find($id);
+            $data['form_data'] = $this->customerRepository->find($id);
         }else{
-            $data['form_data'] = $this->storeRepository->getModel();
+            $data['form_data'] = $this->customerRepository->makeModel();
         }
 
         $data['status_options'] = [];

@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -103,6 +102,15 @@ class CustomersController extends Controller
         $data[] = ['value' => 4, 'label' => __('customer.status_options.dahocthuchuadangky')];
         $data[] = ['value' => 5, 'label' => __('customer.status_options.danghoc')];
         $data[] = ['value' => 6, 'label' => __('customer.status_options.nghihoc')];
+        return $data;
+    }
+
+    public function getResultOptions(){
+        $data = [];
+        $data[] = ['value' => 1, 'label' => __('customer_result.result_types.test')];
+        $data[] = ['value' => 2, 'label' => __('customer_result.result_types.trial')];
+        $data[] = ['value' => 3, 'label' => __('customer_result.result_types.learning')];
+        $data[] = ['value' => 4, 'label' => __('customer_result.result_types.learningday')];
         return $data;
     }
 
@@ -236,13 +244,6 @@ class CustomersController extends Controller
     }
 
 
-    public function getResultOptions(){
-        $data = [];
-        $data[] = ['value' => 1, 'label' => __('customer_result.result_types.test')];
-        $data[] = ['value' => 2, 'label' => __('customer_result.result_types.trial')];
-        $data[] = ['value' => 3, 'label' => __('customer_result.result_types.learning')];
-        $data[] = ['value' => 4, 'label' => __('customer_result.result_types.learningday')];
-        return $data;
-    }
+
 
 }

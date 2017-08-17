@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('goe::layouts.default')
 @section('title', 'Go English Admin - '. $page_title)
 
 
@@ -48,8 +48,8 @@
                 <div class="panel-title"><p>{{ $page_title }}</p></div>
                 <div class="pull-right m-b-10">
                     <div class="col-xs-12">
-                        <a href="{{ url('customer/new') }}" class="btn btn-default "><i class="fa pg-plus"></i>  {{ __('common.add_new') }}</a>
-                        <button type="button" class="btn btn-default">{{ __('common.delete') }}</button>
+                        <a href="{{ url('customer/new') }}" class="btn btn-default "><i class="fa pg-plus"></i>  {{ __('goe::common.add_new') }}</a>
+                        <button type="button" class="btn btn-default">{{ __('goe::common.delete') }}</button>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                 <div id="tableWithDynamicRows_wrapper" class="dataTables_wrapper form-inline no-footer">
                     <div>
                         @if ($list_data->isEmpty())
-                            <p>{{ __('common.no_data') }}</p>
+                            <p>{{ __('goe::common.no_data') }}</p>
                         @else
                         <table class="table table-hover demo-table-dynamic table-responsive-block dataTable no-footer" id="tableWithDynamicRows" role="grid" aria-describedby="tableWithDynamicRows_info">
                             <thead>
@@ -95,7 +95,7 @@
                                         </td>
                                         <td class="v-align-middle">
                                             <p>
-                                                {{ $customer->gender == 2 ? __("customer.form_attribute.gender_f") : __("customer.form_attribute.gender_m") }}
+                                                {{ $customer->gender == 2 ? __("goe::customer.form_attribute.gender_f") : __("goe::customer.form_attribute.gender_m") }}
                                             </p>
                                         </td>
                                         <td class="v-align-middle">
@@ -117,7 +117,7 @@
                                             </p>
                                         </td>
                                         <td class="v-align-middle">
-                                            <p class="text-center"><a href="{{ url('customer/edit/'.$customer->id) }}">{{ __('common.edit') }}</a> | <a href="{{ url('customer/delete/'.$customer->id) }}">{{ __('common.delete') }}</a></p>
+                                            <p class="text-center"><a href="{{ url('customer/edit/'.$customer->id) }}">{{ __('goe::common.edit') }}</a> | <a href="{{ url('customer/delete/'.$customer->id) }}">{{ __('goe::common.delete') }}</a></p>
                                         </td>
                                     </tr>
 

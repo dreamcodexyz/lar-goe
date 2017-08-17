@@ -17,7 +17,7 @@
 
 
                     @if (!$form_data->customer_results->count())
-                        <p>{{ __('common.no_data') }}</p>
+                        <p>{{ __('goe::common.no_data') }}</p>
                     @else
 
 
@@ -58,7 +58,7 @@
                                 </td>
 
                                 <td class="v-align-middle">
-                                    <p class="text-center"><a href="{{ url('customer/result/edit/'.$data->id) }}">{{ __('common.view_info') }}</a> </p>
+                                    <p class="text-center"><a href="{{ url('customer/result/edit/'.$data->id) }}">{{ __('goe::common.view_info') }}</a> </p>
                                 </td>
                             </tr>
 

@@ -1,7 +1,7 @@
 <div class="col-md-12">
 
     @if (!isset($class_data))
-        <p>{{ __('common.no_data') }}</p>
+        <p>{{ __('goe::common.no_data') }}</p>
     @else
 
     <div class="panel panel-transparent">

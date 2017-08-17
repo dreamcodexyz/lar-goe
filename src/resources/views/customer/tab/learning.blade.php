@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label for="fstatus" class="col-sm-3 control-label">{{ __("customer.form_attribute.status") }}</label>
+    <label for="fstatus" class="col-sm-3 control-label">{{ __("goe::customer.form_attribute.status") }}</label>
     <div class="col-sm-9">
 
         <select id="fstatus" name="status" class="status_options_select cs-select cs-skin-slide" data-init-plugin="cs-select">
@@ -14,7 +14,7 @@
 </div>
 
 <div class="form-group">
-    <label for="fstore_id" class="col-sm-3 control-label">{{ __("customer.form_attribute.store") }}</label>
+    <label for="fstore_id" class="col-sm-3 control-label">{{ __("goe::customer.form_attribute.store") }}</label>
     <div class="col-sm-9">
 
         <select id="fstore_id" name="store_id" class="store_options_select cs-select cs-skin-slide" data-init-plugin="cs-select">

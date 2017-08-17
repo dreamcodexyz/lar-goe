@@ -64,9 +64,18 @@ class DreamcodeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(
-            \Dreamcode\Goe\App\Repositories\Store\StoreRepositoryInterface::class,
-            \Dreamcode\Goe\App\Repositories\Store\StoreEloquentRepository::class
+
+        $models = array(
+            'Store',
+            'Customer'
         );
+
+        foreach ($models as $model) {
+            $this->app->singleton(
+                "Dreamcode\Goe\App\Repositories\\{$model}\\{$model}RepositoryInterface",
+                "Dreamcode\Goe\App\Repositories\\{$model}\\{$model}EloquentRepository"
+            );
+        }
+
     }
 }

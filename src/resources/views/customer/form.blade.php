@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('goe::layouts.default')
 @section('title', 'Go English Admin - '. $page_title)
 
 @section('end-head')
@@ -17,7 +17,7 @@
                 <div class="panel-title"><p>{{ $page_title }}</p></div>
                 <div class="pull-right">
                     <div class="col-xs-12">
-                        <a href="{{ url('customer') }}"  class="btn btn-cons"><i class="fa fa-arrow-circle-left"></i> {{ __("common.back") }}</a>
+                        <a href="{{ url('customer') }}"  class="btn btn-cons"><i class="fa fa-arrow-circle-left"></i> {{ __("goe::common.back") }}</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                @include('customer.tab.general')
+                                                @include('goe::customer.tab.general')
                                             </div>
                                         </div>
                                     </div>
@@ -76,14 +76,14 @@
                             <div class="tab-pane" id="tab2FollowUs">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        @include('customer.tab.parent')
+                                        @include('goe::customer.tab.parent')
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab3FollowUs">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        @include('customer.tab.learning')
+                                        @include('goe::customer.tab.learning')
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                             <div class="tab-pane" id="tab4FollowUs">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        @include('customer.tab.result')
+                                        @include('goe::customer.tab.result')
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                             <div class="tab-pane" id="tab5FollowUs">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        @include('customer.tab.class')
+                                        @include('goe::customer.tab.class')
                                     </div>
                                 </div>
                             </div>
@@ -110,12 +110,12 @@
                     <br>
                     <div class="row">
                         <div class="col-sm-3">
-                            <p>{{ __("common.text_comfirm_save_form") }}</p>
+                            <p>{{ __("goe::common.text_comfirm_save_form") }}</p>
                         </div>
                         <div class="col-sm-9">
-                            <button class="btn btn-success" type="submit">{{ __('common.save') }}</button>
-                            <button class="btn btn-success" name="save_and_continue" value="1" type="submit">{{ __('common.save_and_continue') }}</button>
-                            {{--<button class="btn btn-default"><i class="pg-close"></i> {{ __('common.clear') }}</button>--}}
+                            <button class="btn btn-success" type="submit">{{ __('goe::common.save') }}</button>
+                            <button class="btn btn-success" name="save_and_continue" value="1" type="submit">{{ __('goe::common.save_and_continue') }}</button>
+                            {{--<button class="btn btn-default"><i class="pg-close"></i> {{ __('goe::common.clear') }}</button>--}}
                         </div>
                     </div>
 

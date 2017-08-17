@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('goe::layouts.default')
 @section('title', 'Go English Admin - '. $page_title)
 
 @section('end-head')
@@ -16,8 +16,8 @@
                 <div class="panel-title"><p>{{ $page_title }}</p></div>
                 <div class="pull-right">
                     <div class="col-xs-12">
-                        <a href="{{ url('stores') }}"  class="btn btn-cons"><i class="fa fa-arrow-circle-left"></i> {{ __("common.back") }}</a>
-                        <a href="{{ url('stores/delete/'.$form_data->id) }}"  class="btn btn-cons">{{ __("common.delete") }}</a>
+                        <a href="{{ url('stores') }}"  class="btn btn-cons"><i class="fa fa-arrow-circle-left"></i> {{ __("goe::common.back") }}</a>
+                        <a href="{{ url('stores/delete/'.$form_data->id) }}"  class="btn btn-cons">{{ __("goe::common.delete") }}</a>
 
                     </div>
                 </div>
@@ -42,37 +42,37 @@
                             <input type="hidden" name="id" value="{!! $form_data->id !!}">
 
                             <div class="form-group">
-                                <label for="fname" class="col-sm-3 control-label">{{ __("stores.form_attribute.name") }}</label>
+                                <label for="fname" class="col-sm-3 control-label">{{ __("goe::stores.form_attribute.name") }}</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" value="{!! $form_data->name !!}" id="fname" placeholder="{{ __("stores.form_attribute.name") }}" name="name" required aria-required="true">
+                                    <input type="text" class="form-control" value="{!! $form_data->name !!}" id="fname" placeholder="{{ __("goe::stores.form_attribute.name") }}" name="name" required aria-required="true">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="fphone" class="col-sm-3 control-label">{{ __("stores.form_attribute.phone") }}</label>
+                                <label for="fphone" class="col-sm-3 control-label">{{ __("goe::stores.form_attribute.phone") }}</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" value="{!! $form_data->phone !!}" id="fphone" placeholder="{{ __("stores.form_attribute.phone") }}" name="phone" required aria-required="true">
+                                    <input type="text" class="form-control" value="{!! $form_data->phone !!}" id="fphone" placeholder="{{ __("goe::stores.form_attribute.phone") }}" name="phone" required aria-required="true">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="ffacebook" class="col-sm-3 control-label">{{ __("stores.form_attribute.address") }}</label>
+                                <label for="ffacebook" class="col-sm-3 control-label">{{ __("goe::stores.form_attribute.address") }}</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" value="{!! $form_data->address !!}" id="ffacebook" placeholder="{{ __("stores.form_attribute.address") }}" name="address" required aria-required="true">
+                                    <input type="text" class="form-control" value="{!! $form_data->address !!}" id="ffacebook" placeholder="{{ __("goe::stores.form_attribute.address") }}" name="address" required aria-required="true">
                                 </div>
                             </div>
 
 
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-3 control-label">{{ __("stores.form_attribute.note") }}</label>
+                                <label for="name" class="col-sm-3 control-label">{{ __("goe::stores.form_attribute.note") }}</label>
                                 <div class="col-sm-9">
                                     <textarea class="form-control" name="note" id="note" placeholder="" aria-invalid="false">{!! $form_data->note !!}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="fstatus" class="col-sm-3 control-label">{{ __("stores.form_attribute.active") }}</label>
+                                <label for="fstatus" class="col-sm-3 control-label">{{ __("goe::stores.form_attribute.active") }}</label>
                                 <div class="col-sm-9">
 
                                     <select id="fstatus" name="is_actived" class="status_options_select cs-select cs-skin-slide" data-init-plugin="cs-select">
@@ -89,11 +89,11 @@
                             <br>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <p>{{ __("common.text_comfirm_save_form") }}</p>
+                                    <p>{{ __("goe::common.text_comfirm_save_form") }}</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <button class="btn btn-success" type="submit">{{ __('common.save') }}</button>
-                                    <button class="btn btn-success" name="save_and_continue" value="1" type="submit">{{ __('common.save_and_continue') }}</button>
+                                    <button class="btn btn-success" type="submit">{{ __('goe::common.save') }}</button>
+                                    <button class="btn btn-success" name="save_and_continue" value="1" type="submit">{{ __('goe::common.save_and_continue') }}</button>
                                 </div>
                             </div>
 

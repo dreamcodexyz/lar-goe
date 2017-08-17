@@ -4,6 +4,7 @@ namespace Dreamcode\Goe\App\Http\Controllers\Auth;
 
 class RegisterController extends \App\Http\Controllers\Auth\RegisterController
 {
+    protected $redirectTo = '/';
     /**
      * Show the application registration form.
      *

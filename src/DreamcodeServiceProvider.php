@@ -19,8 +19,6 @@ class DreamcodeServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom($this->migration_path());
 
-        $this->loadTranslationsFrom($this->resource_path('lang'), 'dreamcodexyz/lar-goe');
-
         $this->publishes([
             $this->config_path('site.php') => config_path('site.php')
         ]);
@@ -29,6 +27,8 @@ class DreamcodeServiceProvider extends ServiceProvider
             $this->public_path('assets') => public_path('assets'),
             $this->public_path('pages') => public_path('pages'),
         ], 'public');
+
+        $this->loadTranslationsFrom($this->resource_path('lang'), 'goe');
     }
 
     private function base_path($path)

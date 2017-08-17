@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('goe::layouts.default')
 @section('title', 'Go English Admin - '. $page_title)
 
 
@@ -48,8 +48,8 @@
                 <div class="panel-title"><p>{{ $page_title }}</p></div>
                 <div class="pull-right m-b-10">
                     <div class="col-xs-12">
-                        <a href="{{ url('stores/new') }}" class="btn btn-default "><i class="fa pg-plus"></i>  {{ __('common.add_new') }}</a>
-                        <button type="button" class="btn btn-default">{{ __('common.delete') }}</button>
+                        <a href="{{ url('stores/new') }}" class="btn btn-default "><i class="fa pg-plus"></i>  {{ __('goe::common.add_new') }}</a>
+                        <button type="button" class="btn btn-default">{{ __('goe::common.delete') }}</button>
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                                             </p>
                                         </td>
                                         <td class="v-align-middle">
-                                            <p class="text-center"><a href="{{ url('stores/edit/'.$data->id) }}">{{ __('common.edit') }}</a> | <a href="{{ url('stores/delete/'.$data->id) }}">{{ __('common.delete') }}</a></p>
+                                            <p class="text-center"><a href="{{ url('stores/edit/'.$data->id) }}">{{ __('goe::common.edit') }}</a> | <a href="{{ url('stores/delete/'.$data->id) }}">{{ __('goe::common.delete') }}</a></p>
                                         </td>
                                     </tr>
 

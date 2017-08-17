@@ -60,7 +60,7 @@
                 <div id="tableWithDynamicRows_wrapper" class="dataTables_wrapper form-inline no-footer">
                     <div>
                         @if ($list_data->isEmpty())
-                            <p>{{ __('common.no_data') }}</p>
+                            <p>{{ __('goe::common.no_data') }}</p>
                         @else
                         <table class="table table-hover demo-table-dynamic table-responsive-block dataTable no-footer" id="tableWithDynamicRows" role="grid" aria-describedby="tableWithDynamicRows_info">
                             <thead>

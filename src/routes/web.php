@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\Index@execute')->middleware('web');
 
-Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers', 'prefix' => 'test', 'middleware' => ['web']], function(){
-	Route::get('/', 'TestController@index');
-    Route::post('/store', 'TestController@store');
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\Test', 'prefix' => 'test', 'middleware' => ['web']], function(){
+	Route::get('/', 'Index@execute');
+    Route::post('/store', 'Store@execute');
 });
 
 Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'prefix' => 'stores', 'middleware' => ['web']], function(){
@@ -61,7 +62,6 @@ Route::get('/settings/general', 'Settings\General@execute');
 Route::get('/settings/advanced', 'Settings\Advanced@execute');
 
 
-Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\Home\Index@execute')->middleware('web');
 
 
 

@@ -61,7 +61,7 @@ Route::get('/settings/general', 'Settings\General@execute');
 Route::get('/settings/advanced', 'Settings\Advanced@execute');
 
 
-Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\HomeController@index')->middleware('web');
+Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\Home\Index@execute')->middleware('web');
 
 
 

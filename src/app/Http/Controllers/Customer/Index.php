@@ -25,7 +25,7 @@ class Index extends Controller
     {
         $data = ['page_title' => __('goe::customer.customer_list')];
 
-        $model = $this->customerRepository->getAll();
+        $model = $this->customerRepository->all();
         //$model->paginate(10)->sortByDesc("id");
         $data['list_data'] = $model;
         $data['status_options'] = $this->customerRepository->getStatusOptions();

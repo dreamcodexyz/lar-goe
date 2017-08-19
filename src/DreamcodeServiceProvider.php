@@ -29,6 +29,9 @@ class DreamcodeServiceProvider extends ServiceProvider
         ], 'public');
 
         $this->loadTranslationsFrom($this->resource_path('lang'), 'goe');
+
+
+        $this->app['router']->aliasMiddleware('core_loading', 'Dreamcode\Goe\App\Http\Middleware\CoreLoading');
     }
 
     private function base_path($path)

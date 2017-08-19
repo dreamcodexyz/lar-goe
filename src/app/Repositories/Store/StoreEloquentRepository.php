@@ -22,7 +22,6 @@ class StoreEloquentRepository extends EloquentRepository implements StoreReposit
     public function getAllPublished()
     {
         $result = $this->model->where('is_published', 1)->get();
-
         return $result;
     }
 

@@ -25,7 +25,7 @@ class Index extends Controller
     {
         $data = ['page_title' => __('goe::stores.list_title')];
 
-        $model = $this->storeRepository->getAll();
+        $model = $this->storeRepository->all();
         $data['list_data'] = $model;
         $data['status_options'] = [];
         $data['status_options'][] = ['value' => 1, 'label' => __('goe::common.status_enable')];

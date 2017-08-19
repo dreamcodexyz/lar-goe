@@ -23,7 +23,7 @@ class Index extends Controller
 
     public function execute()
     {
-        $stores = $this->storeRepository->getAll();
+        $stores = $this->storeRepository->all();
         return view('goe::pages.test')->with('stores', $stores);
     }
 }

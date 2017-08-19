@@ -29,7 +29,7 @@ class Store extends Controller
             $newStore = $this->storeRepository->create($data);
         }
 
-        $stores = $this->storeRepository->getAll();
+        $stores = $this->storeRepository->all();
         $returnHTML = view('goe::pages.test2',['stores'=> $stores])->render();
 //        return response()->json( array('success' => true, 'html'=>$returnHTML) );
         return response()->json(['msg' => 'OK', 'html' =>$returnHTML, 'store' => $newStore], 200);

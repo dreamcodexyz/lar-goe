@@ -4,18 +4,6 @@ namespace Dreamcode\Goe\App\Repositories\Store;
 interface StoreRepositoryInterface
 {
     /**
-     * Make Model
-     * @return mixed
-     */
-    public function makeModel();
-
-    /**
-     * get Model
-     * @return mixed
-     */
-    public function getModel();
-
-    /**
      * Get all posts only published
      * @return mixed
      */

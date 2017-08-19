@@ -13,8 +13,6 @@ interface CustomerRepositoryInterface
      * get Model
      * @return mixed
      */
-    public function getModel();
-
     public function getStatusOptions();
     public function getResultOptions();
     public function getStoreOptions();

@@ -46,7 +46,7 @@ class Index extends Controller
 //        $count_customer_available = $count_customer - $count_customer_learning - $count_customer_leave;
 
         $count_store_data = '';
-        $stores = $this->storeRepository->getAll();
+        $stores = $this->storeRepository->all();
         $count_store = $stores->count();
         foreach($stores as $val){
             $count_store_data .= $val->name.' ';

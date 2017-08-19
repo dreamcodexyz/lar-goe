@@ -19,3 +19,4 @@
 php artisan migrate:refresh
 php artisan make:seeder UsersTableSeeder
 php artisan db:seed --class="Dreamcode\Goe\Database\Seeds\DatabaseSeeder"
+

@@ -3,13 +3,13 @@
 <head>
     @include('goe::includes.head')
 </head>
-<body class="fixed-header menu-pin">
+<body class="fixed-header horizontal-menu horizontal-app-menu">
 
-@include('goe::includes.sidebar')
+@include('goe::includes.header')
+
+{{--@include('goe::includes.sidebar')--}}
 
 <div class="page-container ">
-
-    @include('goe::includes.header')
 
     <div class="page-content-wrapper ">
 
@@ -20,9 +20,9 @@
     </div>
 </div>
 
-@include('goe::includes.quickview')
+{{--@include('goe::includes.quickview')--}}
 
-@include('goe::includes.overlay')
+{{--@include('goe::includes.overlay')--}}
 
 @include('goe::includes.footer')
 

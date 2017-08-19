@@ -10,29 +10,34 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\Index@execute')->middleware('web');
+Route::get('/', 'Dreamcode\Goe\App\Http\Controllers\Index@execute')->name('/')->middleware(['web', 'core_loading']);
 
 // Authentication Routes...
 Route::get('login', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login')->middleware('web');
 Route::post('login', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@login')->middleware('web');
 Route::post('logout', 'Dreamcode\Goe\App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('web');
-
-// Registration Routes...
 Route::get('register', 'Dreamcode\Goe\App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register')->middleware('web');
 Route::post('register', 'Dreamcode\Goe\App\Http\Controllers\Auth\RegisterController@register')->middleware('web');
-
-// Password Reset Routes...
 Route::get('password/reset', 'Dreamcode\Goe\App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request')->middleware('web');
 Route::post('password/email', 'Dreamcode\Goe\App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email')->middleware('web');
 Route::get('password/reset/{token}', 'Dreamcode\Goe\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset')->middleware('web');
 Route::post('password/reset', 'Dreamcode\Goe\App\Http\Controllers\Auth\ResetPasswordController@reset')->middleware('web');
 
-Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\Test', 'prefix' => 'test', 'middleware' => ['web']], function(){
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\Test', 'prefix' => 'test', 'middleware' => ['web', 'core_loading']], function(){
     Route::get('/', 'Index@execute');
     Route::post('/store', 'Store@execute');
 });
 
-Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'prefix' => 'stores', 'middleware' => ['web']], function(){
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'prefix' => 'stores', 'middleware' => ['web', 'core_loading']], function(){
+    Route::get('/', 'Index@execute')->name('stores');
+    Route::get('/new', 'Add@execute');
+    Route::get('/edit/{id}', 'Edit@execute');
+    Route::post('/save', 'Save@execute');
+    Route::get('/delete/{id}', 'Delete@execute');
+});
+
+
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Customer', 'prefix' => 'customer', 'middleware' => ['web', 'core_loading']], function(){
     Route::get('/', 'Index@execute');
     Route::get('/new', 'Add@execute');
     Route::get('/edit/{id}', 'Edit@execute');
@@ -41,16 +46,13 @@ Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'p
 });
 
 
-Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Customer', 'prefix' => 'customer', 'middleware' => ['web']], function(){
-    Route::get('/', 'Index@execute');
-    Route::get('/new', 'Add@execute');
-    Route::get('/edit/{id}', 'Edit@execute');
-    Route::post('/save', 'Save@execute');
-    Route::get('/delete/{id}', 'Delete@execute');
+Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Settings', 'prefix' => 'settings', 'middleware' => ['web', 'core_loading']], function(){
+    Route::get('/', 'Index@execute')->name('settings');
+    Route::get('/layout', 'Index@layout')->name('settings/layout');
+    Route::post('/set_store', 'Index@set_store')->name('settings/set_store');
 });
 
 
-Route::get('/settings', 'Dreamcode\Goe\App\Http\Controllers\Settings\Index@execute')->middleware('web');
 
 Route::get('bundle', function() {
     return view('goe::pages.bundle');

@@ -9,10 +9,4 @@ interface SettingsRepositoryInterface
      */
     public function makeModel();
 
-    /**
-     * get Model
-     * @return mixed
-     */
-    public function getModel();
-
 }

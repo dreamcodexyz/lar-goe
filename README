@@ -12,3 +12,5 @@
 3. run php artisan vendor:publish --tag=public --force when update in public folder
 
 4. remove default route /, remove default route Auth::routes() in routes/web.php
+
+5. add new model repository, add in DreamcodeServiceProvider::register

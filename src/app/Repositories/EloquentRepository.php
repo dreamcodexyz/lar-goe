@@ -28,4 +28,25 @@ abstract class EloquentRepository implements RepositoryInterface
         return $this->model->all();
     }
 
+    public function find($id)
+    {
+        $result = $this->model->find($id);
+        if($result) {
+            return $result;
+        }
+        return null;
+    }
+
+    public function delete($id)
+    {
+        $result = $this->model->find($id);
+        if($result) {
+            $result->delete();
+            return true;
+        }
+
+        return false;
+    }
+
+
 }

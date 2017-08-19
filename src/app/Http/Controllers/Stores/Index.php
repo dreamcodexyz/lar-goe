@@ -26,11 +26,12 @@ class Index extends Controller
         $data = ['page_title' => __('goe::stores.list_title')];
 
         $model = $this->storeRepository->all();
-        $data['list_data'] = $model;
+        $data['store'] = $this->storeRepository->makeModel();
+        $data['stores'] = $model;
         $data['status_options'] = [];
         $data['status_options'][] = ['value' => 1, 'label' => __('goe::common.status_enable')];
         $data['status_options'][] = ['value' => 2, 'label' => __('goe::common.status_disable')];
 
-        return view('goe::stores.list', $data);
+        return view('goe::pages.stores.index', $data);
     }
 }

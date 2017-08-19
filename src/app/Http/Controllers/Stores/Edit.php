@@ -26,15 +26,17 @@ class Edit extends Controller
         $data = ['page_title' => __("goe::stores.info_title")];
 
         if($id){
-            $data['form_data'] = $this->storeRepository->find($id);
+            $data['store'] = $this->storeRepository->find($id);
         }else{
-            $data['form_data'] = $this->storeRepository->getModel();
+            $data['store'] = $this->storeRepository->getModel();
         }
 
+        $model = $this->storeRepository->all();
+        $data['stores'] = $model;
         $data['status_options'] = [];
         $data['status_options'][] = ['value' => 1, 'label' => __('goe::common.status_enable')];
         $data['status_options'][] = ['value' => 2, 'label' => __('goe::common.status_disable')];
 
-        return view('goe::stores.form', $data);
+        return view('goe::pages.stores.index', $data);
     }
 }

@@ -3,30 +3,30 @@
 
 
 @section('end-head')
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/media/css/jquery.dataTables.css') }}">
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}">
-<link media="screen" type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/datatables.responsive.css') }}">
+{{--<link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/media/css/jquery.dataTables.css') }}">--}}
+{{--<link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}">--}}
+{{--<link media="screen" type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/datatables.responsive.css') }}">--}}
 
 <script>
-    function checkAll()
-    {
+    {{--function checkAll()--}}
+    {{--{--}}
 
-        function toggle(source) {
-            checkboxes = $("input.cbox_customer_id");
-            for(var checkbox in checkboxes)
-                checkbox.checked = source.checked;
-        }
+        {{--function toggle(source) {--}}
+            {{--checkboxes = $("input.cbox_customer_id");--}}
+            {{--for(var checkbox in checkboxes)--}}
+                {{--checkbox.checked = source.checked;--}}
+        {{--}--}}
 
 
-        $("input.cbox_customer_id").each(function(){
-            if($(this).attr('checked')!=true) {
-                $(this).attr('checked',false);
-            }else{
-                $(this).attr('checked',false);
-            }
-        });
+        {{--$("input.cbox_customer_id").each(function(){--}}
+            {{--if($(this).attr('checked')!=true) {--}}
+                {{--$(this).attr('checked',false);--}}
+            {{--}else{--}}
+                {{--$(this).attr('checked',false);--}}
+            {{--}--}}
+        {{--});--}}
 
-    }
+    {{--}--}}
 </script>
 
 @endsection

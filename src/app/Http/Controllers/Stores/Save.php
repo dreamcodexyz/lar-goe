@@ -27,6 +27,7 @@ class Save extends Controller
 
             $this->validate($request, [
                 'name' => 'required',
+                'code' => 'required',
             ]);
 
             if($request->input('id')){
@@ -37,16 +38,11 @@ class Save extends Controller
             }
 
             $model->name = $request->input('name');
-            $model->phone = $request->input('phone');
-            $model->address = $request->input('address');
+            $model->code = $request->input('code');
             $model->note = $request->input('note');
             $model->is_actived = $request->input('is_actived');
 
             $model->save();
-        }
-
-        if($request->input('save_and_continue')){
-            return redirect('stores/edit/' . $model->id);
         }
 
         return redirect('stores');

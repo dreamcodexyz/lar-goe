@@ -31,9 +31,9 @@ Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\Test', 'pref
 Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'prefix' => 'stores', 'middleware' => ['web', 'core_loading']], function(){
     Route::get('/', 'Index@execute')->name('stores');
     Route::get('/new', 'Add@execute');
-    Route::get('/edit/{id}', 'Edit@execute');
-    Route::post('/save', 'Save@execute');
-    Route::get('/delete/{id}', 'Delete@execute');
+    Route::get('/edit/{id}', 'Edit@execute')->name('stores/edit/');
+    Route::post('/save', 'Save@execute')->name('stores/save');
+    Route::get('/delete/{id}', 'Delete@execute')->name('stores/delete/');
 });
 
 

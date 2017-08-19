@@ -36,14 +36,6 @@ class Index extends Controller
         return view('goe::pages.settings.layout', $data);
     }
 
-    public function layout()
-    {
-        $data = ['page_title' => __('goe::stores.list_title')];
-        $data['model'] = $this->repository->all();
-
-        return view('goe::pages.settings.layout', $data);
-    }
-
     public function set_store(Request $request)
     {
         $session_data = $request->session()->get('session_data');

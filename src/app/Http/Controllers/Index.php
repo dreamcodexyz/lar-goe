@@ -79,6 +79,6 @@ class Index extends Controller
         $data['count_customer_leave'] = isset($count_customer_leave) ? $count_customer_leave : 0;
 
 
-        return view('goe::home.index', $data);
+        return view('goe::pages.home.index', $data);
     }
 }

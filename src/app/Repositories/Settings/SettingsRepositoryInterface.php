@@ -1,0 +1,18 @@
+<?php
+namespace Dreamcode\Goe\App\Repositories\Settings;
+
+interface SettingsRepositoryInterface
+{
+    /**
+     * Make Model
+     * @return mixed
+     */
+    public function makeModel();
+
+    /**
+     * get Model
+     * @return mixed
+     */
+    public function getModel();
+
+}

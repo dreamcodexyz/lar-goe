@@ -50,7 +50,7 @@ Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Customer', 
 });
 
 
-
+Route::get('/settings', 'Dreamcode\Goe\App\Http\Controllers\Settings\Index@execute')->middleware('web');
 
 Route::get('bundle', function() {
     return view('goe::pages.bundle');

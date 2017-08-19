@@ -15,7 +15,7 @@ class DreamcodeServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($this->config_path('site.php'), 'site');
 
         $this->loadRoutesFrom($this->base_path('routes/web.php'));
-        $this->loadViewsFrom($this->resource_path('views'), 'goe');
+        $this->loadViewsFrom($this->resource_path('views/v2'), 'goe');
 
         $this->loadMigrationsFrom($this->migration_path());
 
@@ -24,8 +24,8 @@ class DreamcodeServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            $this->public_path('assets') => public_path('assets'),
-            $this->public_path('pages') => public_path('pages'),
+            $this->public_path('assetsv3') => public_path('assets'),
+            $this->public_path('pagesv3') => public_path('pages'),
         ], 'public');
 
         $this->loadTranslationsFrom($this->resource_path('lang'), 'goe');
@@ -67,7 +67,8 @@ class DreamcodeServiceProvider extends ServiceProvider
 
         $models = array(
             'Store',
-            'Customer'
+            'Customer',
+            'Settings'
         );
 
         foreach ($models as $model) {

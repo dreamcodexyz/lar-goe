@@ -1,13 +1,13 @@
 <div class="container">
     @if (session('success'))
         <div class="alert alert-success">
-            {{ session('success') }}dfsd
+            {{ session('success') }}
         </div>
     @endif
 
     @if (session('error'))
         <div class="alert alert-error">
-            {{ session('error') }}sdfsd
+            {{ session('error') }}
         </div>
     @endif
 </div>

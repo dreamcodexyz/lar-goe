@@ -43,6 +43,7 @@ class Save extends Controller
             $model->is_actived = $request->input('is_actived');
 
             $model->save();
+            Session::flash('success', 'Success');
         }
 
         return redirect('stores');

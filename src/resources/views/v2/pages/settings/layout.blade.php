@@ -1,9 +1,9 @@
 @extends('goe::layouts.default')
 @section('title', 'Go English - '. $page_title)
 
-@section('end-head')
+@push('end-head')
 
-@endsection
+@endpush
 
 @section('page-content-wrapper')
 
@@ -27,6 +27,6 @@
 
 @endsection
 
-@section('end-foot')
+@push('end-foot')
 
-@endsection
+@endpush

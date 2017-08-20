@@ -2,16 +2,9 @@
 @section('title', 'Go English Admin - '. $page_title)
 
 
-@section('end-head')
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/media/css/jquery.dataTables.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}">
-    <link media="screen" type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/datatables.responsive.css') }}">
+@push('end-head')
 
-    <script>
-
-    </script>
-
-@endsection
+@endpush
 
 @section('page-content-wrapper')
     <div class="content ">
@@ -69,6 +62,6 @@
 
 @endsection
 
-@section('end-foot')
+@push('end-foot')
 
-@endsection
+@endpush

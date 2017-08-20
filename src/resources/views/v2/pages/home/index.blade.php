@@ -1,17 +1,9 @@
 @extends('goe::layouts.default')
 @section('title', 'Go English Admin - '. $page_title)
 
+@push('end-head')
 
-@section('end-head')
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/media/css/jquery.dataTables.css') }}">
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}">
-<link media="screen" type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/datatables.responsive.css') }}">
-
-<script>
-
-</script>
-
-@endsection
+@endpush
 
 @section('page-content-wrapper')
 <div class="content ">
@@ -99,6 +91,7 @@
 
 @endsection
 
-@section('end-foot')
 
-@endsection
+@push('end-foot')
+
+@endpush

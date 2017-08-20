@@ -25,4 +25,4 @@
 <link href="{{ asset('pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
 <link class="main-stylesheet" href="{{ asset('pages/css/themes/modern.css') }}" rel="stylesheet" type="text/css" />
 
-@yield('end-head')
+@stack('end-head')

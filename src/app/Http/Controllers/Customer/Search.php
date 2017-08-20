@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Dreamcode\Goe\App\Repositories\Customer\CustomerRepositoryInterface;
 
-class Add extends Controller
+class Search extends Controller
 {
     /**
      * @var CustomerRepositoryInterface|\Dreamcode\Goe\App\Repositories\RepositoryInterface
@@ -23,19 +23,23 @@ class Add extends Controller
 
     public function execute()
     {
-        $data = ['page_title' => __("goe::customer.customer_info")];
-        $class_data = [];
-        $model = $this->customerRepository->makeModel();
-        $data['form_data'] = $model;
-        $data['class_data'] = $class_data;
+        $data = ['page_title' => __('goe::customer.customer_list')];
 
-        $data['result_types'] = $this->customerRepository->getResultOptions();
+        $model = $this->customerRepository->all();
+        //$model->paginate(10)->sortByDesc("id");
         $data['status_options'] = $this->customerRepository->getStatusOptions();
         $data['store_options'] = $this->customerRepository->getStoreOptions();
-        $data['active_options'] = $this->customerRepository->getActiveOptions();
-        $data['reference_options'] = $this->customerRepository->getReferenceOptions();
-        $data['parent_hope_options'] = $this->customerRepository->getParentHopeOptions();
 
-        return view('goe::pages.customer.edit', $data);
+        $data['data_table'] = $model;
+        $data['search_condition'] = [
+            'id' => '',
+            'name' => '',
+            'code' => '',
+            'is_actived' => '',
+            'actived' => '',
+        ];
+
+        return view('goe::pages.customer.index', $data);
+
     }
 }

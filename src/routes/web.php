@@ -38,11 +38,12 @@ Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Stores', 'p
 
 
 Route::group(['namespace' => 'Dreamcode\\Goe\\App\Http\\Controllers\\Customer', 'prefix' => 'customer', 'middleware' => ['web', 'core_loading']], function(){
-    Route::get('/', 'Index@execute');
-    Route::get('/new', 'Add@execute');
-    Route::get('/edit/{id}', 'Edit@execute');
-    Route::post('/save', 'Save@execute');
-    Route::get('/delete/{id}', 'Delete@execute');
+    Route::get('/', 'Index@execute')->name('customer');
+    Route::get('/new', 'Add@execute')->name('customer/new');
+    Route::get('/edit/{id}', 'Edit@execute')->name('customer/edit/');
+    Route::post('/save', 'Save@execute')->name('customer/save');
+    Route::post('/search', 'Search@execute')->name('customer/search');
+    Route::get('/delete/{id}', 'Delete@execute')->name('customer/delete/');
 });
 
 

@@ -42,4 +42,32 @@ class CustomerEloquentRepository extends EloquentRepository implements CustomerR
         return $data;
     }
 
+    public function getActiveOptions()
+    {
+        $data = [];
+        $data[] = ['value' => 1, 'label' => __('goe::customer.status_enable')];
+        $data[] = ['value' => 2, 'label' => __('goe::customer.status_disable')];
+        return $data;
+    }
+
+    public function getReferenceOptions()
+    {
+        $data = [];
+        $data[] = ['value' => 0, 'label' => __('goe::common.select')];
+        $data[] = ['value' => 1, 'label' => __('goe::customer.reference_options.friend')];
+        $data[] = ['value' => 2, 'label' => __('goe::customer.reference_options.face')];
+        $data[] = ['value' => 3, 'label' => __('goe::customer.reference_options.web')];
+        return $data;
+    }
+
+    public function getParentHopeOptions()
+    {
+        $data = [];
+        $data[] = ['value' => 0, 'label' => __('goe::common.select')];
+        $data[] = ['value' => 1, 'label' => __('Làm quen với tiếng anh')];
+        $data[] = ['value' => 2, 'label' => __('Cải thiện kỹ năng')];
+        $data[] = ['value' => 3, 'label' => __('Thi chứng chỉ')];
+        return $data;
+    }
+
 }

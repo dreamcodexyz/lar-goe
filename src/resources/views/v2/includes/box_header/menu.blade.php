@@ -3,7 +3,7 @@
         <span class=" arrow"></span></a>
     <ul class="">
         <li class="">
-            <a href="#">Danh sách học viên</a>
+            <a href="{{ route('customer') }}">Danh sách học viên</a>
         </li>
     </ul>
 </li>

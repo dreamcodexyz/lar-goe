@@ -24,17 +24,23 @@ class Edit extends Controller
     public function execute($id = null)
     {
         $data = ['page_title' => __("goe::stores.info_title")];
+        $class_data = [];
 
         if($id){
             $data['form_data'] = $this->customerRepository->find($id);
         }else{
-            $data['form_data'] = $this->customerRepository->makeModel();
+            return redirect()->back();
         }
 
-        $data['status_options'] = [];
-        $data['status_options'][] = ['value' => 1, 'label' => __('goe::common.status_enable')];
-        $data['status_options'][] = ['value' => 2, 'label' => __('goe::common.status_disable')];
+        $data['class_data'] = $class_data;
 
-        return view('goe::stores.form', $data);
+        $data['result_types'] = $this->customerRepository->getResultOptions();
+        $data['status_options'] = $this->customerRepository->getStatusOptions();
+        $data['store_options'] = $this->customerRepository->getStoreOptions();
+        $data['active_options'] = $this->customerRepository->getActiveOptions();
+        $data['reference_options'] = $this->customerRepository->getReferenceOptions();
+        $data['parent_hope_options'] = $this->customerRepository->getParentHopeOptions();
+
+        return view('goe::pages.customer.edit', $data);
     }
 }

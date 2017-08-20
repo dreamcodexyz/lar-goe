@@ -24,6 +24,7 @@ class Delete extends Controller
     public function execute($id)
     {
         $this->storeRepository->delete($id);
+        Session::flash('success', 'Success');
         return redirect('stores');
     }
 }

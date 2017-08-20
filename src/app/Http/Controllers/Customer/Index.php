@@ -27,13 +27,19 @@ class Index extends Controller
 
         $model = $this->customerRepository->all();
         //$model->paginate(10)->sortByDesc("id");
-        $data['list_data'] = $model;
         $data['status_options'] = $this->customerRepository->getStatusOptions();
         $data['store_options'] = $this->customerRepository->getStoreOptions();
 
-        return view('goe::customer.list', $data);
+        $data['data_table'] = $model;
+        $data['search_condition'] = [
+            'id' => '',
+            'name' => '',
+            'code' => '',
+            'is_actived' => '',
+            'actived' => false,
+        ];
+
+        return view('goe::pages.customer.index', $data);
+
     }
-
-
-
 }

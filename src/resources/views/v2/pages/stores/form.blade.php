@@ -23,8 +23,8 @@
         </div>
         <div class="col-md-6">
             <select class="custom-select pull-right" name="is_actived" >
-                <option {{ $store->is_activeted == 1 ? 'selected' : '' }} value="1">Mở</option>
-                <option {{ $store->is_activeted == 1 ? 'selected' : '' }} value="2">Đóng</option>
+                <option {{ $store->is_actived == 1 ? 'selected' : '' }} value="1">Mở</option>
+                <option {{ $store->is_actived == 2 ? 'selected' : '' }} value="2">Đóng</option>
             </select>
         </div>
     </div>
